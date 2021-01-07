@@ -36,4 +36,4 @@ The function is asynchronous because we need to wait for the api to return a jok
 
 ### Found a bug
 
-Create a new issue!
+Create a new [issue!](https://github.com/Drxckzyz/get-dadjoke/issues)
