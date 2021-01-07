@@ -19,4 +19,4 @@ const joke = async () => {
 }
 
 
-module.exports.dadjoke = joke
+module.exports.getdadjoke = joke
