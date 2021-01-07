@@ -12,10 +12,8 @@ const joke = async () => {
     if(!jokeObj.status === '200') {
         return new Error(`Timeout out: Status: ${jokeObj.status}`)
     }
-   
-    const actualjoke = jokeObj.joke 
     
-    return actualjoke 
+    return jokeObj.joke
 }
 
 
