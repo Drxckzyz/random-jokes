@@ -118,7 +118,8 @@ getRandomCHNJoke().then((joke) => {
 
 Here are some extra things:
 
-- Trump Quotes
+- Trump Quote
+- Facts
 
 ```js
 const { getRandomTrumpQuote, getFact } = require("random-jokes");
