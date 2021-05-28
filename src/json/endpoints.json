@@ -1,0 +1,42 @@
+{
+  "v2jokeapi": {
+    "any": "https://v2.jokeapi.dev/joke/Any",
+    "blacklists": "https://v2.jokeapi.dev/joke/Any?blacklistFlags={arraylist}",
+    "blacklistsOptions": [
+      "nsfw",
+      "religious",
+      "political",
+      "racist",
+      "sexist",
+      "explicit"
+    ],
+    "jokeMatch": "https://v2.jokeapi.dev/joke/Any?contains={string}"
+  },
+  "chuckNorris": {
+    "random": "https://api.chucknorris.io/jokes/random",
+    "category": "https://api.chucknorris.io/jokes/random?category={category}",
+    "query": "https://api.chucknorris.io/jokes/search?query={string}",
+    "Categories": [
+      "animal",
+      "career",
+      "celebrity",
+      "dev",
+      "explicit",
+      "fashion",
+      "food",
+      "history",
+      "money",
+      "movie",
+      "music",
+      "political",
+      "religion",
+      "science",
+      "sport",
+      "travel"
+    ]
+  },
+  "dadjoke": "https://icanhazdadjoke.com/",
+  "punchlines": "https://official-joke-api.appspot.com/random_joke",
+  "fact": "https://uselessfacts.jsph.pl/random.json?language=en",
+  "trump": "https://tronalddump.io/random/quote"
+}

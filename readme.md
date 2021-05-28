@@ -1,39 +1,139 @@
 # About
 
-Get dad joke is a simple package that returns dad jokes from [icanha's dad joke api](https://icanhazdadjoke.com/api)
+Random Jokes is a package that allows you to get different type of jokes
 
-## Instalation
+## Types of Jokes:
+
+- Normal Jokes
+- Dad Jokes
+- Jokes with Punchlines
+- Chuck Norris Jokes
+
+Also has some extras like facts and trump quotes
+
+## Setup:
+
+You simply just import what you you want
+
 ```js
-npm install get-dadjoke
+    const {
+    getDadjoke,
+    getPunchLine,
+    getRandomCHNJoke,
+    getCategoryCHNJoke,
+    matchChuckJoke,
+    matchJoke,
+    getRandomJoke
+    getRandomTrumpQuote,
+    getFact
+} = require('random-jokes')
 ```
 
-### Example
+## Usage:
+
+Below is an Example of using async with a few of the Jokes
 
 ```js
-const { Client } = require('discord.js');
-const client = new Client();
+const { getDadjoke, getPunchLine, getRandomJoke } = require("random-jokes")(
+  async () => {
+    //return as a string
+    const dadJoke = await getDadjoke();
 
-const { getdadjoke } = require('get-dadjoke');
+    console.log(dadJoke);
 
+    // return an object, with the setup and delivery
+    const punchline = await getPunchLine();
 
-client.on('ready', () => {
-    console.log(`${client.user.tag} has logged in!`)
-})
+    console.log(punchline);
 
-client.on('message', async (msg) => {
-    if(msg.content === 'joke') {
-    
-       const joke = await getdadjoke()
-       
-        msg.channel.send(joke);
-    }
-})
+    // if a joke is considered to be in one of these categories it will not return it
+    const blacklist = [
+      "nsfw",
+      "religious",
+      "political",
+      "racist",
+      "sexist",
+      "explicit",
+    ];
 
-client.login('toek goes here');
+    //returns an object with the joke and a property 'safe' to show whether the joke is safe or not
+    //param takes either a string or array
+    const joke = await getRandomJoke(blacklist | "nsfw");
+
+    console.log(joke);
+  }
+)();
 ```
 
-The function is asynchronous because we need to wait for the api to return a joke, so not using async/await will end up in an empty message!
+Below are non-async example
 
-### Found a bug
+```js
+const {
+  getRandomCHNJoke,
+  getCategoryCHNJoke,
+  matchChuckJoke,
+  matchJoke,
+} = require("random-jokes");
 
-Create a new [issue!](https://github.com/Drxckzyz/get-dadjoke/issues)
+matchChuckJoke().then((jokes) => {
+  console.log(jokes);
+});
+
+matchJoke().then((joke) => {
+  console.log(joke, joke.setup, joke.delivery, joke.safe);
+});
+
+/**
+ * @description List of valid categories
+ * "Categories": [
+      "animal",
+      "career",
+      "celebrity",
+      "dev",
+      "explicit",
+      "fashion",
+      "food",
+      "history",
+      "money",
+      "movie",
+      "music",
+      "political",
+      "religion",
+      "science",
+      "sport",
+      "travel"
+    ]
+*/
+
+getCategoryCHNJoke("dev").then((joke) => {
+  console.log(joke);
+});
+
+getRandomCHNJoke().then((joke) => {
+  console.log(joke);
+});
+```
+
+## Extras:
+
+Here are some extra things:
+
+- Trump Quotes
+
+```js
+const { getRandomTrumpQuote, getFact } = require("random-jokes");
+
+getRandomTrumpQuote().then((TrumpQuote) => {
+  console.log(TrumpQuote, TrumpQuote.quote, TrumpQuote.target);
+});
+
+getFact().then((joke) => {
+  console.log(joke);
+});
+```
+
+Like this package, be sure to give the github repo a star!
+
+### Found a bug?
+
+Create a new [issue!](https://github.com/Drxckzyz/random-jokes/issues)

@@ -1,18 +1,30 @@
 {
-  "name": "get-dadjoke",
-  "version": "2.0.2",
-  "description": "Gets a random dad joke!",
-  "main": "src/index.js",
+  "name": "random-jokes",
+  "version": "2.0.3",
+  "description": "A Package that allows you to get different type of jokes",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "jokes",
+    "random",
+    "fun",
+    "npm"
+  ],
+  "typings": "typings/index.d.ts",
   "author": "Drxckzyz",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "node-fetch": "^2.6.1"
   },
+  "bugs": {
+    "url": "https://github.com/Drxckzyz/random-jokes.git/issues"
+  },
+  "homepage": "https://github.com/Drxckzyz/random-jokes.git#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Drxckzyz/get-dadjoke"
+    "url": "https://github.com/Drxckzyz/random-jokes"
   }
 }
